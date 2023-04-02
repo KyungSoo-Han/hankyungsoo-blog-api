@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url:  jdbc:mariadb://3.38.99.208:3306/blog
+    #url: jdbc:log4jdbc:h2:tcp://localhost/~/devlsy-service1;MODE=mariadb
+    username: hanks
+    password: 590405
+    driver-class-name: org.mariadb.jdbc.Driver
+    #driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+server:
+  port: 90
