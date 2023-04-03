@@ -21,6 +21,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
+	//파일 관련
+	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+	//랜덤 문자열 생성 관련
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	//Page Helper
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.5'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
