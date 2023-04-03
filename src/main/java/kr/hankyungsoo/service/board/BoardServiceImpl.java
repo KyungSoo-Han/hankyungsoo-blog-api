@@ -25,4 +25,16 @@ public class BoardServiceImpl implements BoardService{
     public BoardDto findById(Long id) {
         return boardMapper.findById(id);
     }
+
+    @Override
+    public BoardDto updateBoard(BoardDto boardDto) {
+        boardMapper.updateBoard(boardDto);
+        return boardDto;
+    }
+
+    @Override
+    public Long deleteBoard(Long id) {
+        boardMapper.deleteBoard(id);
+        return id;
+    }
 }

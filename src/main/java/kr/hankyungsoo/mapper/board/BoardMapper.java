@@ -8,4 +8,8 @@ public interface BoardMapper {
     void insertBoard(BoardDto boardDto);
 
     BoardDto findById(Long id);
+
+    void updateBoard(BoardDto boardDto);
+
+    void deleteBoard(Long id);
 }

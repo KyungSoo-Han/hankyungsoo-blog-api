@@ -10,4 +10,7 @@ public interface BoardService {
 
     BoardDto findById(Long id);
 
+    BoardDto updateBoard(BoardDto boardDto);
+
+    Long deleteBoard(Long id);
 }
