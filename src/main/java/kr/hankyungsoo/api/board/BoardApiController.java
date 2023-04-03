@@ -14,13 +14,22 @@ public class BoardApiController {
 
     @GetMapping("/{id}")
     public BoardDto findById(@PathVariable Long id){
-
         return boardService.findById(id);
     }
 
     @PostMapping
     public BoardDto insertBoard(@RequestBody BoardDto boardDto){
         return boardService.insertBoard(boardDto);
+    }
+
+    @PutMapping
+    public BoardDto updateBoard(@RequestBody BoardDto boardDto){
+        return boardService.updateBoard(boardDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public Long deleteBoard(@PathVariable Long id){
+        return boardService.deleteBoard(id);
     }
 
 }

@@ -5,10 +5,19 @@
     <insert id="insertBoard" parameterType="kr.hankyungsoo.dto.board.BoardDto" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into t_board ( category, title, content, visible, created_dt, user_id)
         values (
-                   #{category}, #{title}, #{content}, #{visible}, #{createdDt}, #{userId}
+                   #{category}, #{title}, #{content}, #{visible}, now(), #{userId}
                )
     </insert>
 
+    <update id="updateBoard" parameterType="kr.hankyungsoo.dto.board.BoardDto" keyProperty="id">
+        update t_board
+        set category = #{category},
+            title = #{title},
+            content = #{content},
+            visible = #{visible},
+            modified_dt = now()
+        where id = #{id}
+    </update>
     <select id="findById" parameterType="Long" resultType="kr.hankyungsoo.dto.board.BoardDto">
         select id, category, title, content, visible, created_dt, user_id
         from t_board
