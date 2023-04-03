@@ -3,10 +3,7 @@ package kr.hankyungsoo.api.board;
 import kr.hankyungsoo.dto.board.BoardDto;
 import kr.hankyungsoo.service.board.BoardService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -14,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class BoardApiController {
 
     private final BoardService boardService;
+
+    @GetMapping("/{id}")
+    public BoardDto findById(@PathVariable Long id){
+
+        return boardService.findById(id);
+    }
 
     @PostMapping
     public BoardDto insertBoard(@RequestBody BoardDto boardDto){

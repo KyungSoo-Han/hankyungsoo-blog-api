@@ -9,6 +9,12 @@
                )
     </insert>
 
+    <select id="findById" parameterType="Long" resultType="kr.hankyungsoo.dto.board.BoardDto">
+        select id, category, title, content, visible, created_dt, user_id
+        from t_board
+        where id = #{id}
+    </select>
+
 </mapper>
 
     
