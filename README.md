@@ -1,2 +1,2 @@
-# hankyungsoo-blog-api
-blog.hankyungsoo.kr
+# 블로그 백엔드 API
+## 게시판 관련 모든 기능 총 집합
