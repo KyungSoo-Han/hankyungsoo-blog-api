@@ -7,4 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface BoardService {
     BoardDto insertBoard(BoardDto boardDto);
+
+    BoardDto findById(Long id);
+
 }

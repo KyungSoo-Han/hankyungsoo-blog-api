@@ -20,4 +20,9 @@ public class BoardServiceImpl implements BoardService{
 
         return boardDto;
     }
+
+    @Override
+    public BoardDto findById(Long id) {
+        return boardMapper.findById(id);
+    }
 }
