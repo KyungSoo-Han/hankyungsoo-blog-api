@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hankyungsoo.mapper.board.BoardMapper">
+
+    <insert id="insertBoard" parameterType="kr.hankyungsoo.dto.board.BoardDto" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_board ( category, title, content, visible, created_dt, user_id)
+        values (
+                   #{category}, #{title}, #{content}, #{visible}, #{createdDt}, #{userId}
+               )
+    </insert>
+
+</mapper>
+
+    
