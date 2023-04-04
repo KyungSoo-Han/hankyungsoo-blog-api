@@ -12,6 +12,8 @@ public class BoardDto {
     private String content;
     private String visible;
     private String userId;
+    private String realFileName;
+    private String serverFileName;
     private LocalDateTime createdDt;
     private LocalDateTime modifiedDt;
 
