@@ -24,6 +24,9 @@
         where id = #{id}
     </select>
 
+    <delete id="deleteBoard" parameterType="Long">
+        delete from t_board where id = #{id}
+    </delete>
 </mapper>
 
     
