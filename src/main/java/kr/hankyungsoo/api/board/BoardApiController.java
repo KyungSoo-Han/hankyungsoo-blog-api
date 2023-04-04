@@ -1,5 +1,6 @@
 package kr.hankyungsoo.api.board;
 
+import com.github.pagehelper.PageInfo;
 import kr.hankyungsoo.dto.board.BoardDto;
 import kr.hankyungsoo.service.board.BoardService;
 import kr.hankyungsoo.service.common.FileUploadService;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,10 +21,15 @@ public class BoardApiController {
     private final BoardService boardService;
     private final FileUploadService uploadService;
 
-
     @GetMapping("/{id}")
     public BoardDto findById(@PathVariable Long id){
         return boardService.findById(id);
+    }
+
+    @GetMapping
+    public PageInfo<BoardDto> findList(@RequestParam int pageNo, @RequestParam int pageSize){
+        List<BoardDto> list = boardService.findList(pageNo, pageSize);
+        return PageInfo.of(list);
     }
 
     @PostMapping
