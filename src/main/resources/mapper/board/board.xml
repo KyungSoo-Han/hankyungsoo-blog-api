@@ -3,9 +3,9 @@
 <mapper namespace="kr.hankyungsoo.mapper.board.BoardMapper">
 
     <insert id="insertBoard" parameterType="kr.hankyungsoo.dto.board.BoardDto" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-        insert into t_board ( category, title, content, visible, created_dt, user_id)
+        insert into t_board ( category, title, content, visible, real_file_name, server_file_name, created_dt, user_id)
         values (
-                   #{category}, #{title}, #{content}, #{visible}, now(), #{userId}
+                   #{category}, #{title}, #{content}, #{visible},#{realFileName},#{serverFileName}, now(), #{userId}
                )
     </insert>
 
@@ -15,11 +15,13 @@
             title = #{title},
             content = #{content},
             visible = #{visible},
+            real_file_name = #{realFileName},
+            server_file_name = #{serverFileName},
             modified_dt = now()
         where id = #{id}
     </update>
     <select id="findById" parameterType="Long" resultType="kr.hankyungsoo.dto.board.BoardDto">
-        select id, category, title, content, visible, created_dt, user_id
+        select id, category, title, content, visible, real_file_name, server_file_name, created_dt, user_id
         from t_board
         where id = #{id}
     </select>
