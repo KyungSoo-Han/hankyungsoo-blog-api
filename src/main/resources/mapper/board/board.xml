@@ -20,11 +20,13 @@
             modified_dt = now()
         where id = #{id}
     </update>
+
     <select id="findById" parameterType="Long" resultType="kr.hankyungsoo.dto.board.BoardDto">
         select id, category, title, content, visible, real_file_name, server_file_name, created_dt, user_id
         from t_board
         where id = #{id}
     </select>
+
     <select id="findList" parameterType="int" resultType="kr.hankyungsoo.dto.board.BoardDto">
         select id, category, title, content, visible, real_file_name, server_file_name, created_dt, user_id
         from t_board
